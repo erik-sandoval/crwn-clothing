@@ -1,11 +1,19 @@
+//packages
 import React from "react";
+import { Switch, Route } from "react-router-dom";
+
+// css
 import "./App.css";
+
+// components
 import HomePage from "./pages/homepage/homepage.component";
 
 function App() {
   return (
     <div className='App'>
-      <HomePage></HomePage>
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+      </Switch>
     </div>
   );
 }
