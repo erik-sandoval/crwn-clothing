@@ -68,6 +68,7 @@ const SHOP_DATA = [
       {
         id: 1,
         name: "Adidas NMD",
+        imageUrl: "https://i.ibb.co/0s3pdnc/adidas-nmd.png",
         price: 220
       },
       {
