@@ -10,7 +10,7 @@ import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 import Header from "./pages/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
   constructor(props) {
@@ -24,10 +24,11 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user);
+      // this.setState({ currentUser: user });
 
-      console.log(user);
+      // console.log(user);
     });
   }
 
@@ -36,10 +37,10 @@ class App extends React.Component {
   }
 
   render() {
-    const {currentUser} = this.state
+    const { currentUser } = this.state;
     return (
       <div className='App'>
-        <Header currentUser={currentUser}/>
+        <Header currentUser={currentUser} />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
