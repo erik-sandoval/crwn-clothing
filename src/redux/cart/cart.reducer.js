@@ -6,10 +6,10 @@ const INITIAL_STATE = {
 
 const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case CartActionTypes.TOGGLE_CART_HIDDEN:
+    case CartActionTypes.TOGGLE_HIDDEN_CART:
       return {
         ...state,
-        hidden: false
+        hidden: !state.hidden
       };
     default:
       return state;
