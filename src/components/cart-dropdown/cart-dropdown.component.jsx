@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import CustomButton from "../custom-button/custom-button.component";
 
@@ -13,4 +14,8 @@ const CartDropdown = () => {
   );
 };
 
-export default CartDropdown;
+const mapStateToProps = state => ({
+  hidden: state.cart.hidden
+});
+
+export default connect(mapStateToProps)(CartDropdown);
