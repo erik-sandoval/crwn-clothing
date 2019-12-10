@@ -19,7 +19,7 @@ const CollectionItem = ({ item, addItem }) => {
       <BackgroundImageDiv imageUrl={imageUrl} />
       <CollectionFooterDiv>
         <NameSpan>{name}</NameSpan>
-        <PriceSpan>{price}</PriceSpan>
+        <PriceSpan>${price}</PriceSpan>
       </CollectionFooterDiv>
       <CustomButtonStyle onClick={() => addItem(item)} inverted>
         Add to cart
