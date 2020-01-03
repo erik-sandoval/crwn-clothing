@@ -3,7 +3,8 @@ import UserActionTypes from "./user.types";
 import {
   auth,
   googleProvider,
-  createUserProfileDocument
+  createUserProfileDocument,
+  getCurrentUser
 } from "../../firebase/firebase.utils";
 import { signInSuccess, signInFailure } from "./user.actions";
 
